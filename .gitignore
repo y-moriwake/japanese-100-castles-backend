@@ -1,2 +1,9 @@
+# Python
+__pycache__/
+*.pyc
+*.py[cod]
+*$py.class
+
+# Django
 local_settings.py
 db.sqlite3
