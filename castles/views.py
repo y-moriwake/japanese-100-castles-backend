@@ -1,11 +1,10 @@
 from django.shortcuts import render
-import django_filters
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
 
-from .models import Castle
+from .models import CastleMst
 from .serializer import CastleSerializer
 
 
-class CastleViewSet(ModelViewSet):
-    queryset = Castle.objects.all()
+class CastleViewSet(ReadOnlyModelViewSet):
+    queryset = CastleMst.objects.all()
     serializer_class = CastleSerializer

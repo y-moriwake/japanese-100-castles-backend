@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from .models import Castle
+from .models import CastleMst
 
 
-@admin.register(Castle)
-class Castle(admin.ModelAdmin):
+@admin.register(CastleMst)
+class CastleMst(admin.ModelAdmin):
     pass
