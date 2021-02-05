@@ -6,5 +6,5 @@ from .serializer import CastleSerializer
 
 
 class CastleViewSet(ReadOnlyModelViewSet):
-    queryset = CastleMst.objects.all()
+    queryset = CastleMst.objects.order_by('id')
     serializer_class = CastleSerializer

@@ -6,4 +6,4 @@ from .models import CastleMst
 class CastleSerializer(serializers.ModelSerializer):
     class Meta:
         model = CastleMst
-        fields = ('id', 'name', 'prefecture', 'description')
+        fields = ('id', 'name', 'prefecture', 'address', 'description')
