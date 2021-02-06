@@ -5,5 +5,5 @@
 ```bash 起動
 docker-compose build
 docker-compose up -d
-docker-compose exec web python manage.py createsuperuser
+docker-compose exec django python manage.py createsuperuser
 ```

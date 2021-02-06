@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from .models import CastleMst
+from .models import Castle, Attribute
 
 
 class CastleSerializer(serializers.ModelSerializer):
     class Meta:
-        model = CastleMst
+        model = Castle
         fields = ('id', 'name', 'prefecture', 'address', 'description')

@@ -1,8 +1,13 @@
 from django.contrib import admin
 
-from .models import CastleMst
+from .models import Castle, Attribute
 
 
-@admin.register(CastleMst)
-class CastleMst(admin.ModelAdmin):
+@admin.register(Castle)
+class Castle(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Attribute)
+class Attribute(admin.ModelAdmin):
     pass
