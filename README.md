@@ -1,8 +1,9 @@
 ## setup
 
-```bash
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver
+## docker 
+
+```bash 起動
+docker-compose build
+docker-compose up -d
+docker-compose exec django python manage.py createsuperuser
 ```

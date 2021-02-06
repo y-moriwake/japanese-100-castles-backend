@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:11.2
+    container_name: postgres
+    ports: 
+      - "5432"
+    environment:
+      - POSTGRES_DB=postgres6328
+      - POSTGRES_USER=postgres6328
+      - POSTGRES_PASSWORD=postgres6328
+    # volumes:
+    #   - ./docker/init.d:/docker-entrypoint-initdb.d  
+    restart: always
+    hostname: postgres
+  django:
+    build: .
+    container_name: django
+    command: >
+      sh -c "python manage.py makemigrations castles &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    restart: always
+  pgadmin4:
+    image: dpage/pgadmin4:4.2
+    container_name: pgadmin4
+    ports:
+      - 8080:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: postgres6328
+      PGADMIN_DEFAULT_PASSWORD: postgres6328
+    hostname: pgadmin4
+    depends_on:
+      - postgres
+    restart: always

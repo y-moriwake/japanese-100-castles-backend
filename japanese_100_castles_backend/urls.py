@@ -24,5 +24,5 @@ urlpatterns = [
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/', include(castles_router.urls)),
+    url(r'^api/castles/', include(castles_router.urls)),
 ]
